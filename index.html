@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SparkleTrack — Product videos and follow-ups for artificial jewellery sellers</title>
+<meta name="description" content="SparkleTrack is a done-for-you video and follow-up setup for artificial jewellery sellers and boutiques in Hyderabad and online: product reels, a follow-up board and a weekly trend digest.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#C9A227;
+    --maroon:#7B2D3B;
+    --plum:#2E1A2F;
+    --plum-logo:#2C1A2A;
+    --ivory:#FBF6EE;
+    --ink:#1A1214;
+    --soft:#F6EFE4;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+    font-size:18px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%}
+  h1,h2,h3,.brandname{
+    font-family:'Fraunces',Georgia,'Times New Roman',serif;
+    font-weight:600;
+    letter-spacing:-.01em;
+    color:inherit;
+  }
+  h1{margin:0 0 20px;font-size:clamp(2.2rem,5.2vw,3.7rem);line-height:1.06}
+  h2{margin:0 0 20px;font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.14}
+  h3{margin:0 0 8px;font-size:1.3rem;line-height:1.25}
+  p{margin:0 0 16px}
+  p:last-child{margin-bottom:0}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .narrow-para{max-width:65ch}
+  .label{
+    margin:0 0 14px;
+    font-family:'Inter',sans-serif;
+    font-size:.76rem;
+    font-weight:600;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--maroon);
+  }
+  .rule{width:52px;height:2px;background:var(--gold);border:0;margin:0 0 24px}
+  .section{padding:96px 0}
+  .section.soft{background:var(--soft)}
+  .section.narrow .wrap{max-width:760px}
+
+  /* header */
+  .site-header{
+    position:sticky;top:0;z-index:20;
+    background:rgba(251,246,238,.94);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(26,18,20,.08);
+  }
+  .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .brand-logo{height:40px;width:auto;display:block;mix-blend-mode:multiply}
+  .brandname{display:none;font-size:1.45rem;color:var(--ink)}
+
+  /* buttons */
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;justify-content:center;
+    min-height:48px;padding:0 24px;border-radius:999px;
+    font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;
+    text-decoration:none;border:1px solid transparent;cursor:pointer;
+  }
+  .btn svg{width:20px;height:20px;flex:0 0 auto}
+  .btn-primary{background:var(--gold);color:#241a06}
+  .btn-primary:hover{background:#b8911f}
+  .btn-ghost{border-color:var(--maroon);color:var(--maroon);background:transparent}
+  .btn-ghost:hover{background:rgba(123,45,59,.07)}
+  .btn-small{min-height:44px;padding:0 18px;font-size:.9rem;border-color:var(--gold);color:var(--maroon);background:transparent}
+  .btn-small:hover{background:rgba(201,162,39,.14)}
+
+  /* hero */
+  .hero{background:var(--plum);color:var(--ivory)}
+  .hero-grid{
+    display:grid;grid-template-columns:1fr;gap:36px;
+    padding-top:56px;padding-bottom:56px;align-items:center;
+  }
+  .hero-text{max-width:560px}
+  .hero h1 em{font-style:normal;color:var(--gold)}
+  .lede{font-size:1.15rem;line-height:1.6;color:rgba(251,246,238,.86);max-width:52ch}
+  .hero-media{margin:24px 0 0;border-radius:18px;overflow:hidden;background:var(--plum-logo);box-shadow:0 26px 60px rgba(0,0,0,.38)}
+  .hero-media img{display:block;width:100%;height:100%;min-height:min(58vh,520px);object-fit:cover;object-position:center 26%}
+
+  /* problem */
+  .quotes{display:grid;gap:22px;margin-top:8px}
+  .quote{
+    margin:0;padding-left:20px;border-left:2px solid var(--maroon);
+    font-size:1.15rem;line-height:1.6;color:#2b2126;
+  }
+
+  /* band */
+  .band{background:var(--plum);padding:0}
+  .band img{display:block;width:min(840px,100%);height:auto;margin:0 auto}
+
+  /* cards */
+  .cards{display:grid;grid-template-columns:1fr;gap:24px;margin:8px 0 30px}
+  .card{background:#FFFDF9;border:1px solid rgba(26,18,20,.09);border-radius:16px;padding:34px 30px}
+  .card svg{width:28px;height:28px;color:var(--gold)}
+  .card h3{margin-top:18px}
+  .card p{color:#3b3034;max-width:34ch}
+  .price{margin:0;padding-top:22px;border-top:1px solid rgba(201,162,39,.55);font-size:1.15rem}
+  .price strong{font-weight:600;color:var(--maroon)}
+
+  /* steps */
+  .steps{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:26px}
+  .steps li{display:flex;gap:20px;align-items:flex-start}
+  .step-num{
+    flex:0 0 auto;width:42px;height:42px;border-radius:50%;
+    border:1px solid var(--gold);color:var(--maroon);
+    display:grid;place-items:center;font-family:'Fraunces',serif;font-weight:600;
+  }
+  .steps h3{margin:6px 0 0;font-size:1.2rem;max-width:34ch}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1fr;gap:34px;align-items:start}
+  .about-media{margin:0;border-radius:16px;overflow:hidden;background:var(--plum-logo)}
+  .about-media img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
+  .name-row{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+  .avatar{width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);flex:0 0 auto}
+  .name-row h2{margin:0}
+  .slot{
+    margin-top:8px;padding:14px 18px;border-left:3px solid var(--gold);
+    background:rgba(201,162,39,.12);border-radius:8px;color:var(--maroon);font-size:1rem;
+  }
+
+  /* contact */
+  .contact-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
+
+  /* footer */
+  .site-footer{background:var(--plum-logo);color:rgba(251,246,238,.82);padding:44px 0}
+  .footer-inner{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+  .footer-logo{height:34px;width:auto;display:block}
+  .footname{display:none;font-family:'Fraunces',serif;font-size:1.3rem;color:var(--ivory)}
+  .site-footer p{margin:0;font-size:.95rem;max-width:52ch}
+
+  @media (min-width:820px){
+    .cards{grid-template-columns:repeat(3,1fr)}
+    .about-grid{grid-template-columns:minmax(240px,1fr) 2fr;gap:52px}
+  }
+  @media (min-width:900px){
+    .hero-grid{grid-template-columns:1fr 1.02fr;gap:56px;min-height:min(82vh,820px);padding-top:44px;padding-bottom:44px}
+    .hero-media{margin:0}
+    .hero-media img{min-height:min(66vh,680px)}
+  }
+  @media (max-width:700px){
+    body{font-size:17px}
+    .section{padding:56px 0}
+    .hero-grid{padding-top:40px;padding-bottom:44px}
+    h1{font-size:clamp(2rem,8.4vw,2.7rem)}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="SparkleTrack home">
+      <img class="brand-logo" src="Pictures/logo.jpeg" alt="SparkleTrack logo: a gold diamond beside the word SparkleTrack" width="890" height="240" onerror="this.style.display='none';var n=document.getElementById('brandname');if(n){n.style.display='inline'}">
+      <span class="brandname" id="brandname">SparkleTrack</span>
+    </a>
+    <a class="btn btn-small" href="https://cal.com/msk-cal-com/20-minute-intro-call" target="_blank" rel="noopener">Book a call</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <h1>Your designs, turned into <em>reels</em> — and every enquiry followed up.</h1>
+      <p class="lede">SparkleTrack is a done-for-you video and follow-up setup for artificial jewellery sellers and boutiques in Hyderabad and online.</p>
+      <a class="btn btn-primary" href="https://cal.com/msk-cal-com/20-minute-intro-call" target="_blank" rel="noopener">Book a 20 minute call</a>
+    </div>
+    <figure class="hero-media">
+      <img src="Pictures/speaking.jpeg" alt="The founder of SparkleTrack speaking with a jewellery seller beside a boutique display counter, results on a screen behind them" width="1376" height="768" onerror="this.closest('figure').style.display='none'">
+    </figure>
+  </div>
+</section>
+
+<section class="section narrow">
+  <div class="wrap">
+    <p class="label">What happens today</p>
+    <h2>Designs get shot, then the reels stop.</h2>
+    <hr class="rule">
+    <div class="quotes">
+      <p class="quote">“I shoot designs on my phone, so the product videos and reels come in bursts and then stop.”</p>
+      <p class="quote">“Enquiries come in on Instagram DMs and phone calls, and they go cold because nobody tracks who to chase.”</p>
+      <p class="quote">“Unsold stock sits there, and no one knows the money at stake.”</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-label="SparkleTrack at work">
+  <img src="Pictures/shot-1.jpeg" alt="SparkleTrack flat lay: cards headed AI Product Reels, Follow up Board and Weekly Trend Digest, beside gold jewellery and a phone" width="1024" height="1024" loading="lazy" onerror="this.closest('.band').style.display='none'">
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="label">What you get</p>
+    <h2>Three things, handled end to end.</h2>
+    <hr class="rule">
+    <div class="cards">
+      <article class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.2-7.2A2 2 0 0 1 2.8 12V4.8A2 2 0 0 1 4.8 2.8H12a2 2 0 0 1 1.4.6l7.2 7.2a2 2 0 0 1 0 2.8Z"/><circle cx="7.6" cy="7.6" r="1.2"/></svg>
+        <h3>Design enquiry to catalogue record</h3>
+        <p>So every design gets a clean catalogue page.</p>
+      </article>
+      <article class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16M3 10h6"/></svg>
+        <h3>Jewellery enquiry follow-up board</h3>
+        <p>So every enquiry sits on one board, with the money at stake.</p>
+      </article>
+      <article class="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></svg>
+        <h3>Monday festival and trend digest for jewellery sellers</h3>
+        <p>So you know what to shoot next.</p>
+      </article>
+    </div>
+    <p class="price"><strong>Rs 30,000 a month</strong> covers the reels, the follow-up board and the weekly digest.</p>
+  </div>
+</section>
+
+<section class="section soft narrow">
+  <div class="wrap">
+    <p class="label">How it works</p>
+    <h2>Three steps, then it keeps moving.</h2>
+    <hr class="rule">
+    <ol class="steps">
+      <li>
+        <span class="step-num" aria-hidden="true">1</span>
+        <h3>You send me your design photos.</h3>
+      </li>
+      <li>
+        <span class="step-num" aria-hidden="true">2</span>
+        <h3>I cut the reels and set up your follow-up board.</h3>
+      </li>
+      <li>
+        <span class="step-num" aria-hidden="true">3</span>
+        <h3>The videos keep coming and the follow-ups keep moving, with a digest every Monday.</h3>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap about-grid">
+    <figure class="about-media">
+      <img src="Pictures/working.jpeg" alt="The founder of SparkleTrack working on a laptop in a jewellery boutique, the follow-up board open on screen" width="896" height="1200" loading="lazy" onerror="this.closest('figure').style.display='none'">
+    </figure>
+    <div class="about-text">
+      <p class="label">Who I am</p>
+      <div class="name-row">
+        <img class="avatar" src="Pictures/profile.jpeg" alt="Portrait of the founder of SparkleTrack" width="1024" height="1024" loading="lazy" onerror="this.style.display='none'">
+        <h2>[YOUR NAME]</h2>
+      </div>
+      <p class="narrow-para">I build SparkleTrack for artificial jewellery sellers and boutiques in Hyderabad and online. I turn your design photos into product reels, and I keep every enquiry on one board so the money at stake stays in plain sight.</p>
+      <p class="slot">[WHY I STARTED — two lines in your own words: what you saw sellers struggling with, and why you built SparkleTrack.]</p>
+    </div>
+  </div>
+</section>
+
+<section class="section soft narrow" id="contact">
+  <div class="wrap">
+    <p class="label">Contact</p>
+    <h2>Start here.</h2>
+    <hr class="rule">
+    <p class="narrow-para">Tell me about your designs and where the follow-ups are getting stuck.</p>
+    <div class="contact-actions">
+      <a class="btn btn-primary" href="https://cal.com/msk-cal-com/20-minute-intro-call" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></svg>
+        Book a 20 minute call
+      </a>
+      <a class="btn btn-ghost" href="https://wa.me/919848391416?text=Hi%2C%20I%20saw%20SparkleTrack%20and%20I%27d%20like%20to%20know%20more%20about%20the%20product%20reels%20and%20the%20follow-up%20setup." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l2.1-5.4A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+        Message me on WhatsApp
+      </a>
+      <a class="btn btn-ghost" href="mailto:sant.4@gmail.com?subject=SparkleTrack%20enquiry%20-%20product%20reels%20and%20follow-up">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        Email me
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <img class="footer-logo" src="Pictures/logo-dark.jpeg" alt="SparkleTrack logo" width="890" height="240" onerror="this.style.display='none';var n=document.getElementById('footname');if(n){n.style.display='inline'}">
+    <span class="footname" id="footname">SparkleTrack</span>
+    <p>Product videos and follow-ups for artificial jewellery sellers, in Hyderabad and online.</p>
+  </div>
+</footer>
+
+</body>
+</html>
